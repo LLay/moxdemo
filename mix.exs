@@ -7,7 +7,10 @@ defmodule MoxDemo.MixProject do
       version: "0.1.0",
       elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+
+      # Needed because https://hexdocs.pm/mox/Mox.html#module-compile-time-requirements
+      elixirc_paths: elixirc_paths(Mix.env)
     ]
   end
 
@@ -26,4 +29,7 @@ defmodule MoxDemo.MixProject do
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"},
     ]
   end
+
+  defp elixirc_paths(:test), do: ["test/support", "lib"]
+  defp elixirc_paths(_),     do: ["lib"]
 end
