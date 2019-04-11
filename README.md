@@ -1,8 +1,10 @@
 # MoxDemo
 
-**TODO: Add description**
-
-## Installation
+To run the demo, run:
+```
+mix deps.get
+mix test
+```
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 by adding `moxdemo` to your list of dependencies in `mix.exs`:
